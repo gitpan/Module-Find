@@ -1,30 +1,14 @@
-# $Id: Makefile.PL,v 1.2 2004/06/17 00:11:51 comdog Exp $
+use 5.006001;
 use ExtUtils::MakeMaker;
-
-eval "use Test::Manifest";
-unless( $@ )
-   {
-   * ExtUtils::MM_Any::test_via_harness = sub
-	   {
-	   my($self, $perl, $tests) = @_;
-
-	   return qq|\t$perl "-MTest::Manifest" | .
-			qq|"-e" "run_t_manifest(\$(TEST_VERBOSE), '\$(INST_LIB)', | .
-			qq|'\$(INST_ARCHLIB)')"\n|;
-	   }
-   }
-	   
+# See lib/ExtUtils/MakeMaker.pm for details of how to influence
+# the contents of the Makefile that is written.
 WriteMakefile(
-	'NAME'	       => 'Module::Find',
-	'VERSION_FROM' => "lib/Find.pm",
-		    	
-	'PM' => {
-        'lib/Find.pm'  => '$(INST_LIBDIR)/Find.pm',
-    	},
-
-	'MAN3PODS' => {
-		'lib/Find.pm'    => '$(INST_MAN3DIR)/Module::Find.3',
-		},
-
-	clean => { FILES => '*.bak Module-Find-*' },
-	);
+    NAME              => 'Module::Find',
+    VERSION_FROM      => 'Find.pm', # finds $VERSION
+    PREREQ_PM         => {'Test::More'  =>  0,
+		          'File::Find'  => 0,
+		          'File::Spec'  => 0}, 
+    ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
+      (ABSTRACT_FROM  => 'Find.pm', # retrieve abstract from module
+       AUTHOR         => 'Christian Renz <crenz@web42.com>') : ()),
+);
