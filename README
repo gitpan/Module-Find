@@ -1,4 +1,4 @@
-Module::Find version 0.01
+Module::Find version 0.02
 ========================
 
 Module::Find lets you find and use modules in categories. This can be very 
@@ -22,8 +22,6 @@ This module requires these other modules and libraries:
   File::Find
 
 COPYRIGHT AND LICENCE
-
-Put the correct copyright and licence information here.
 
 Copyright (C) 2004 Christian Renz <crenz@web42.com>
 

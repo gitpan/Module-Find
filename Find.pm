@@ -6,7 +6,7 @@ use warnings;
 
 use File::Find;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 our $basedir = undef;
 our @results = ();
@@ -120,35 +120,6 @@ sub useall(*) {
 	return @r;
 }
 
-=back
-
-=head1 HISTORY
-
-=over 8
-
-=item 0.01, 2004-04-22
-
-Original version; created by h2xs 1.22
-
-=back
-
-=head1 SEE ALSO
-
-L<perl>
-
-=head1 AUTHOR
-
-Christian Renz, E<lt>crenz@web42.comE<gt>
-
-=head1 COPYRIGHT AND LICENSE
-
-Copyright 2004 by Christian Renz <crenz@web42.com>
-
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself. 
-
-=cut
-
 # 'wanted' functions for find()
 # you know, this would be a nice application for currying...
 sub _wanted {
@@ -190,5 +161,39 @@ sub _find(*) {
     @results = map "$category\::$_", @results;
     return @results;
 }
+
+=back
+
+=head1 HISTORY
+
+=over 8
+
+=item 0.01, 2004-04-22
+
+Original version; created by h2xs 1.22
+
+=item 0.02, 2004-05-25
+
+Added test modules that were left out in the first version. Thanks to
+Stuart Johnston for alerting me to this.
+
+=back
+
+=head1 SEE ALSO
+
+L<perl>
+
+=head1 AUTHOR
+
+Christian Renz, E<lt>crenz@web42.comE<gt>
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright 2004 by Christian Renz <crenz@web42.com>
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself. 
+
+=cut
 
 1;

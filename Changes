@@ -1,0 +1,7 @@
+HISTORY
+    0.01, 2004-04-22
+            Original version; created by h2xs 1.22
+
+    0.02, 2004-05-25
+            Added test modules that were left out in the first version.
+            Thanks to Stuart Johnston for alerting me to this.
