@@ -1,0 +1,11 @@
+#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
+name:         Module-Find
+version:      0.01
+version_from: Find.pm
+installdirs:  site
+requires:
+    File::Find:                    1
+    Test::More:                    0
+
+distribution_type: module
+generated_by: ExtUtils::MakeMaker version 6.12
