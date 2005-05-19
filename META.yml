@@ -1,11 +1,11 @@
 #XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
 name:         Module-Find
-version:      0.03
+version:      0.04
 version_from: Find.pm
 installdirs:  site
 requires:
-    File::Find:                    0
     File::Spec:                    0
+    File::Find:                    0
     Test::More:                    0
 
 distribution_type: module

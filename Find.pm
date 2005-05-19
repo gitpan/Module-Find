@@ -7,7 +7,7 @@ use warnings;
 use File::Spec;
 use File::Find;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 our $basedir = undef;
 our @results = ();
@@ -210,6 +210,10 @@ Thanks to brian d foy.
 
 Added setmoduledirs and updated tests. Idea shamelessly stolen from
 ...errm... inspired by brian d foy.
+
+=item 0.04, 2005-05-20
+
+Added POD tests.
 
 =back
 
