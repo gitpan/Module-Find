@@ -7,7 +7,7 @@ use warnings;
 use File::Spec;
 use File::Find;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 our $basedir = undef;
 our @results = ();
@@ -141,7 +141,7 @@ sub useall(*) {
 # you know, this would be a nice application for currying...
 sub _wanted {
     my $name = File::Spec->abs2rel($_, $basedir);
-    return unless $name;
+    return unless $name && $name ne File::Spec->curdir();
 
     if (-d && $prune) {
         $File::Find::prune = 1;
@@ -214,6 +214,10 @@ Added setmoduledirs and updated tests. Idea shamelessly stolen from
 =item 0.04, 2005-05-20
 
 Added POD tests.
+
+=item 0.05, 2005-11-30
+
+Fixed issue with bugfix in PathTools-3.14.
 
 =back
 

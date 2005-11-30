@@ -16,3 +16,13 @@ HISTORY
 
             Added setmoduledirs and updated tests. Idea shamelessly stolen
             from ...errm... inspired by brian d foy.
+
+    0.04, 2005-05-20
+
+            Added POD tests.
+
+    0.05, 2005-11-30
+
+            Fixed issue with bugfix in PathTools-3.14.
+
+
