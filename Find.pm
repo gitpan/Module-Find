@@ -7,7 +7,7 @@ use warnings;
 use File::Spec;
 use File::Find;
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 our $basedir = undef;
 our @results = ();
@@ -181,6 +181,10 @@ sub _find(*) {
               no_chdir => 1}, $basedir);
     }
 
+    # filter duplicate modules
+    my %seen = ();
+    @results = grep { not $seen{$_}++ } @results;
+
     @results = map "$category\::$_", @results;
     return @results;
 }
@@ -219,6 +223,10 @@ Added POD tests.
 
 Fixed issue with bugfix in PathTools-3.14.
 
+=item 0.06, 2008-01-26
+
+Module::Find now won't report duplicate modules several times anymore (thanks to Uwe Všlker for the report and the patch)
+
 =back
 
 =head1 SEE ALSO
@@ -231,7 +239,7 @@ Christian Renz, E<lt>crenz@web42.comE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2004 by Christian Renz <crenz@web42.com>. All rights reserved.
+Copyright 2004-2008 by Christian Renz <crenz@web42.com>. All rights reserved.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself. 
