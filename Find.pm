@@ -1,4 +1,4 @@
-﻿package Module::Find;
+package Module::Find;
 
 use 5.006001;
 use strict;
@@ -7,7 +7,7 @@ use warnings;
 use File::Spec;
 use File::Find;
 
-our $VERSION = '0.09';
+our $VERSION = '0.10';
 
 our $basedir = undef;
 our @results = ();
@@ -19,6 +19,8 @@ our @ISA = qw(Exporter);
 our @EXPORT = qw(findsubmod findallmod usesub useall setmoduledirs);
 
 our @EXPORT_OK = qw(followsymlinks ignoresymlinks);
+
+=encoding utf-8
 
 =head1 NAME
 
@@ -271,6 +273,10 @@ Fixed RT#49511: Removed Mac OS X extended attributes from distribution
 
 Fixed RT#38302: Fixed META.yml generation (thanks very much to cpanservice for the help).
 
+=item 0.10, 2010-02-26
+
+Fixed RT#55010: Removed Unicode BOM from Find.pm.
+
 =back
 
 =head1 DEVELOPMENT NOTES
@@ -287,7 +293,7 @@ Christian Renz, E<lt>crenz@web42.comE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2004-2008 by Christian Renz <crenz@web42.com>. All rights reserved.
+Copyright 2004-2010 by Christian Renz <crenz@web42.com>. All rights reserved.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself. 

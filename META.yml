@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Module-Find
-version:            0.09
+version:            0.10
 abstract:           Find and use installed modules in a (sub)category
 author:
     - Christian Renz <crenz@web42.com>
@@ -21,7 +21,7 @@ no_index:
     directory:
         - t
         - inc
-generated_by:       ExtUtils::MakeMaker version 6.55_02
+generated_by:       ExtUtils::MakeMaker version 6.52
 meta-spec:
     url:      http://module-build.sourceforge.net/META-spec-v1.4.html
     version:  1.4
